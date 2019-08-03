@@ -7,7 +7,7 @@ const searchURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 // format query parameters
 function formatQueryParams(params) {
   console.log(params);
-  const queryItems = Object.keys(params).map(key => `${key}=${params[key]}`)
+  const queryItems = Object.keys(params).map(key => `fq=${key}:${params[key]}`)
   console.log(queryItems);
   return queryItems.join('&');
 }
