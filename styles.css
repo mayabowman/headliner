@@ -34,6 +34,10 @@ a {
   line-height: 1.5em;
 }
 
+a:hover {
+  text-decoration-line: underline;
+}
+
 #date-button {
   display: block;
   margin-left: auto;
@@ -52,6 +56,8 @@ a {
 #results-section {
   text-align: left;
   line-height: 1.5em;
+  margin-top: 30px;
+  border-top: 1px solid #fff8dc;
 }
 
 #results-title {
@@ -62,5 +68,9 @@ a {
 @media screen and (min-width: 1024px) {
   header {
     padding: 25px;
+  }
+
+  #date-button {
+    padding: 1%;
   }
 }
