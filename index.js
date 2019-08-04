@@ -44,6 +44,7 @@ function displayResults(responseJson) {
     $('#results').append(`<li><a href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
   };
   $('#results-section').removeClass('hidden');
+  $('#results-title').text(`Results for ${$('#search-date').val()}`)
   $('#search-date').val('');
   
 }

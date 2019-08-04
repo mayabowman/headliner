@@ -17,16 +17,21 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: #272a2a;
   color: #fff8dc;
-  padding: 6%;
+  padding: 0;
 }
 
 ul {
   list-style: none;
 }
 
+li {
+  margin-bottom: 15px;
+}
+
 a {
   color: #fff8dc;
   text-decoration: none;
+  line-height: 1.5em;
 }
 
 #date-button {
@@ -47,4 +52,15 @@ a {
 #results-section {
   text-align: left;
   line-height: 1.5em;
+}
+
+#results-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 25px;
+  }
 }
