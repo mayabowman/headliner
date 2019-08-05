@@ -99,17 +99,19 @@ function watchPage() {
     let today = new Date();
     let date = today.getDate();
     let month = today.getMonth() +1;
-
-    if (month < 10) {
-      month = '0' + month;
-    }
+    let autoDate = month + date + today.getFullYear() - 50;
 
     if (date < 10) {
       date = '0' + date;
     }
 
-    let autoDate = month + date + today.getFullYear() - 50;
+    if (month < 10) {
+      autoDate = '0' + month + date + today.getFullYear() - 50;
+    } else {
+      autoDate = month + date + today.getFullYear() -50;
+    }
     getOldNews(autoDate);
+
   });
 }
 
