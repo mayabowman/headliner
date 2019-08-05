@@ -62,11 +62,7 @@ function getNews(searchDate) {
 function displayAutoResults(responseJson) {
   console.log(responseJson);
   $('#error-message').empty();
-  for (let i = 0; i < responseJson.response.docs.length; i++) {
-    $('#feature-article').append(`<li><a href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
-  };
-  $('#search-date').val('');
-  
+  $('#feature-article').append(`<li><a href='${responseJson.response.docs.web_url}'>${responseJson.response.docs.headline.main}</a></li>`);
 }
 
 // display results
@@ -96,19 +92,17 @@ function watchForm() {
 function watchPage() {
   $(document).ready(event=> {
     // event.preventDefault();
+    let autoDate = null;
     let today = new Date();
     let date = today.getDate();
     let month = today.getMonth() +1;
-    let autoDate = month + date + today.getFullYear() - 50;
 
     if (date < 10) {
       date = '0' + date;
-    }
-
-    if (month < 10) {
-      autoDate = '0' + month + date + today.getFullYear() - 50;
+    } if (month < 10) {
+      autoDate = (today.getFullYear() - 50 + '-' + '0' + month + '-' + date);
     } else {
-      autoDate = month + date + today.getFullYear() -50;
+      autoDate = (today.getFullYear() - 50 + '-' + month + '-' + date);
     }
     getOldNews(autoDate);
 
