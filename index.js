@@ -62,7 +62,7 @@ function getNews(searchDate) {
 function displayAutoResults(responseJson) {
   console.log(responseJson);
   $('#error-message').empty();
-  $('#feature-article').append(`<li><a href='${responseJson.response.docs.web_url}'>${responseJson.response.docs.headline.main}</a></li>`);
+  $('#feature-article').append(`<li class='todays-li'><a href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></li>`);
 }
 
 // display results
@@ -105,7 +105,6 @@ function watchPage() {
       autoDate = (today.getFullYear() - 50 + '-' + month + '-' + date);
     }
     getOldNews(autoDate);
-
   });
 }
 

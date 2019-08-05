@@ -53,6 +53,10 @@ a:hover {
   display: none;
 }
 
+.news-section {
+  border: 1px solid #fff8dc;
+}
+
 #results-section {
   text-align: left;
   line-height: 1.5em;
@@ -63,6 +67,10 @@ a:hover {
 #results-title {
   text-align: center;
   margin-bottom: 15px;
+}
+
+.todays-li {
+  text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
