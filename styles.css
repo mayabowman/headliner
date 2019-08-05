@@ -47,6 +47,7 @@ a:hover {
   color: #fff8dc;
   padding: 2%;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .hidden {
@@ -55,6 +56,7 @@ a:hover {
 
 .news-section {
   border: 1px solid #fff8dc;
+  margin-bottom: 15px;
 }
 
 #results-section {
@@ -67,10 +69,6 @@ a:hover {
 #results-title {
   text-align: center;
   margin-bottom: 15px;
-}
-
-.todays-li {
-  text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
