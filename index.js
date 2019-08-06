@@ -62,7 +62,10 @@ function getNews(searchDate) {
 function displayAutoResults(responseJson) {
   console.log(responseJson);
   $('#error-message').empty();
-  $('#auto-title').append(`<h2>50 Years Ago Today: <a href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
+  $('#auto-title').append(`<h2>50 Years Ago Today: <a id='auto-link' href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
+  // for (let i = 0; i < responseJson.response.docs.length; i++) {
+  //   $('#auto-link').attr('href', `'${responseJson.response.docs[i].web_url}'`);
+  // }
 }
 
 // display results
