@@ -71,6 +71,24 @@ a:hover {
   margin-bottom: 15px;
 }
 
+.slide-left {
+  width: 100%;
+  overflow: hidden;
+  animation: slide-left 2s
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   header {
     padding: 25px;

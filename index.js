@@ -71,7 +71,7 @@ function displayResults(responseJson) {
   $('#error-message').empty();
   $('#results').empty();
   for (let i = 0; i < responseJson.response.docs.length; i++) {
-    $('#results').append(`<li><a href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
+    $('#results').append(`<li class='slide-left'><a href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
   };
   $('#results-section').removeClass('hidden');
   $('#results-title').text(`Results for ${$('#search-date').val()}`)
