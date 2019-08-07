@@ -71,6 +71,8 @@ a:hover {
   border: 1px solid #fff8dc;
   margin-bottom: 15px;
   background-color: #272a2a;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 #results-section {
@@ -85,23 +87,24 @@ a:hover {
   margin-bottom: 15px;
 }
 
-.slide-left {
-  width: 100%;
+/* .slide-up {
+  height: 100%;
   overflow: hidden;
-  animation: slide-left 2s
+  animation: 2s slide-up;
+  margin-top: 0%;
 }
 
-@keyframes slide-left {
+@keyframes slide-up {
   from {
-    margin-left: 100%;
-    width: 300%; 
+    margin-top: 100%;
+    height: 300%; 
   }
 
   to {
-    margin-left: 0%;
-    width: 100%;
+    margin-top: 0%;
+    height: 100%;
   }
-}
+} */
 
 @media screen and (min-width: 1024px) {
   header {
@@ -110,5 +113,23 @@ a:hover {
 
   #date-button {
     padding: 1%;
+  }
+
+  .slide-left {
+    width: 100%;
+    overflow: hidden;
+    animation: slide-left 2s
+  }
+  
+  @keyframes slide-left {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
   }
 }
