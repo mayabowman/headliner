@@ -77,7 +77,18 @@ function displayResults(responseJson) {
     $('#results').append(`<li class='slide-left'><a href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
   };
   $('#results-section').removeClass('hidden');
-  $('#results-title').text(`Results for ${$('#search-date').val()}`)
+  const userSearchDate = $('#search-date').val();
+  const dateArray = userSearchDate.split("-");
+  const indexOfFirst = dateArray[1].indexOf('0');
+  const indexOfSecond = dateArray[2].indexOf('0');
+  if (indexOfFirst === 0) {
+    dateArray[1] = dateArray[1].substr(1);
+  };
+  if (indexOfSecond === 0) {
+    dateArray[2] = dateArray[2].substr(1);
+  }
+  const formattedDate = `${dateArray[1]}-${dateArray[2]}-${dateArray[0]}`;
+  $('#results-title').text(`Results for ${formattedDate}`);
   $('#search-date').val('');
   
 }
