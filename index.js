@@ -63,9 +63,9 @@ function displayAutoResults(responseJson) {
   console.log(responseJson);
   $('#error-message').empty();
   $('#auto-title').append(`<h2>50 Years Ago Today: <a id='auto-link' href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
-  // for (let i = 0; i < responseJson.response.docs.length; i++) {
-  //   $('#auto-link').attr('href', `'${responseJson.response.docs[i].web_url}'`);
-  // }
+  for (let i = 0; i < responseJson.response.docs.length; i++) {
+    $('<a></a>').attr('href', responseJson.response.docs[i].web_url).attr('alt', 'Alt is mandatory').appendTo('#container-to-append-to')
+  }
 }
 
 // display results
