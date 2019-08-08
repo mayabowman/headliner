@@ -40,6 +40,7 @@ a {
   color: #fff8dc;
   text-decoration: none;
   line-height: 1.5em;
+  text-align: left;
 }
 
 a:hover {
@@ -85,6 +86,98 @@ a:hover {
 #results-title {
   text-align: center;
   margin-bottom: 15px;
+}
+
+.slide {
+  width: 100%;
+  float: left;
+}
+
+.slider {
+  overflow: hidden;
+  height: auto;
+}
+
+.slider figure {
+  position: relative;
+  width: 1000%;
+  margin: 0;
+	left: 0;
+	animation: 20s slidy infinite;
+}
+
+@keyframes slidy {
+	0%{
+		left: 0%
+	}
+
+	10%{
+		left: 0%;
+	}
+
+	12%{
+		left: -100%;
+	}
+
+	22%{
+		left: -100%;
+	}
+
+	24%{
+		left: -200%;
+	}
+
+	34%{
+		left: -200%;
+	}
+
+	36%{
+		left: -300%;
+	}
+
+	46%{
+		left: -300%;
+	}
+
+	48%{
+		left: -400%;
+	}
+
+	58%{
+		left: -400%;
+	}
+
+	60%{
+		left: -500%;
+	}
+
+	70%{
+		left: -500%;
+	}
+
+	72%{
+		left: -600%;
+	}
+
+	82%{
+		left: -600%;
+	}
+
+	84%{
+		left: -700%;
+	}
+
+	94%{
+		left: -700%;
+	}
+
+	96%{
+		left: -800%;
+	}
+
+	100%{
+		left: -800%;
+  }
 }
 
 /* .slide-up {
