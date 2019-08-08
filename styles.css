@@ -64,6 +64,9 @@ a:hover {
   line-height: 1.5em;
   margin-top: 30px;
   border-top: 1px solid #fff8dc;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
 }
 
 #results-title {
@@ -74,7 +77,7 @@ a:hover {
 .slide-left {
   width: 100%;
   overflow: hidden;
-  animation: slide-left 2s
+  animation: slide-left 2s;
 }
 
 @keyframes slide-left {

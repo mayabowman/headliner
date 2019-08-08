@@ -62,7 +62,7 @@ function getNews(searchDate) {
 function displayAutoResults(responseJson) {
   console.log(responseJson);
   $('#error-message').empty();
-  $('#auto-title').append(`<h2>50 Years Ago Today: <a href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
+  $('#auto-title').append(`<h2>50 Years Ago Today: <a target='_blank' href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
 }
 
 // display results
@@ -71,7 +71,7 @@ function displayResults(responseJson) {
   $('#error-message').empty();
   $('#results').empty();
   for (let i = 0; i < responseJson.response.docs.length; i++) {
-    $('#results').append(`<li class='slide-left'><a href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
+    $('#results').append(`<li class='slide-left'><a target='_blank' href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
   };
   $('#results-section').removeClass('hidden');
   $('#results-title').text(`Results for ${$('#search-date').val()}`)
@@ -90,7 +90,6 @@ function watchForm() {
 
 // event listener for feature article
 function watchPage() {
-  $(document).ready(event=> {
     // event.preventDefault();
     let autoDate = null;
     let today = new Date();
@@ -105,8 +104,11 @@ function watchPage() {
       autoDate = (today.getFullYear() - 50 + '-' + month + '-' + date);
     }
     getOldNews(autoDate);
-  });
+};
+
+function startApp() {
+  watchPage();
+  watchForm();
 }
 
-$(watchForm);
-$(watchPage);
+$(startApp);
