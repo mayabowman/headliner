@@ -60,15 +60,12 @@ function getNews(searchDate) {
 
 // display auto results
 function displayAutoResults(responseJson) {
-  console.log(responseJson);
   $('#error-message').empty();
-  // $('#auto-title').append(`<h2>50 Years Ago Today: <a id='auto-link' target='_blank' href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
-  for (let i = 0; i < responseJson.response.docs.length; i++) {
-    $('<a></a>').attr('href', responseJson.response.docs[i].web_url).attr('alt', 'Alt is mandatory').text(`${responseJson.response.docs[i].headline.main}`).appendTo('#feature-articles');
+  const headlines = responseJson.response.docs;
+  for (let item of headlines) {
+    const listItem = `<div class='slide'><a target='_blank' href="${item.web_url}">${item.headline.main}</a></div>`;
+    $(listItem).appendTo('#feature-articles');
   }
-  // for (let i = 0; i < responseJson.response.docs.length; i++) {
-  //   $('#feature-articles').append(`<a id='auto-link' class='slide' target='_blank' href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a>`);
-  // }
 }
 
 // display results
