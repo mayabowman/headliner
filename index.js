@@ -61,15 +61,11 @@ function getNews(searchDate) {
 // display auto results
 function displayAutoResults(responseJson) {
   $('#error-message').empty();
-<<<<<<< HEAD
-  $('#auto-title').append(`<h2>50 Years Ago Today: <a target='_blank' href='${responseJson.response.docs[0].web_url}'>${responseJson.response.docs[0].headline.main}</a></h2>`);
-=======
   const headlines = responseJson.response.docs;
   for (let item of headlines) {
     const listItem = `<div class='slide'><a target='_blank' href="${item.web_url}">${item.headline.main}</a></div>`;
     $(listItem).appendTo('#feature-articles');
   }
->>>>>>> feature/styling
 }
 
 // display results
