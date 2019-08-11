@@ -15,9 +15,17 @@ header {
 body {
   text-align: center;
   font-family: 'Lato', sans-serif;
-  background-color: #272a2a;
   color: #fff8dc;
   padding: 0;
+  background-color: #272a2a;
+  background: 
+    /* top, transparent grey */ 
+    linear-gradient(
+      rgba(0, 0, 0, .8), 
+      rgba(0, 0, 0, .8)
+    ),
+    /* bottom, image */
+    url(http://amartyasen.co/wp-content/uploads/2019/08/old-newspaper-seamless-pattern-vector-background-of-vintage-template-front-page-instant-download-for-free.jpg) 
 }
 
 ul {
@@ -32,6 +40,7 @@ a {
   color: #fff8dc;
   text-decoration: none;
   line-height: 1.5em;
+  text-align: left;
 }
 
 a:hover {
@@ -50,6 +59,11 @@ a:hover {
   margin-bottom: 10px;
 }
 
+#date-button:hover {
+  background-color: #fff8dc;
+  color: #272a2a;
+}
+
 .hidden {
   display: none;
 }
@@ -57,6 +71,9 @@ a:hover {
 .news-section {
   border: 1px solid #fff8dc;
   margin-bottom: 15px;
+  background-color: #272a2a;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 #results-section {
@@ -74,23 +91,132 @@ a:hover {
   margin-bottom: 15px;
 }
 
-.slide-left {
-  width: 100%;
-  overflow: hidden;
-  animation: slide-left 2s;
+.slider{
+	overflow: hidden;
+	height: 150px;
 }
 
-@keyframes slide-left {
+.slider figure div{
+	width: 10%;
+  float: left;
+}
+
+.slider figure{
+	position: relative;
+	width: 1000%;
+	margin: 0;
+	left: 0;
+	animation: 35s slidy infinite;
+}
+
+@keyframes slidy {
+	0%{
+		left: 0%
+	}
+
+	10%{
+		left: 0%;
+	}
+
+	11%{
+		left: -100%;
+	}
+
+	20%{
+		left: -100%;
+	}
+
+	21%{
+		left: -200%;
+	}
+
+	30%{
+		left: -200%;
+	}
+
+	31%{
+		left: -300%;
+	}
+
+	40%{
+		left: -300%;
+	}
+
+	41%{
+		left: -400%;
+	}
+
+	50%{
+		left: -400%;
+	}
+
+	51%{
+		left: -500%;
+	}
+
+	60%{
+		left: -500%;
+	}
+
+	61%{
+		left: -600%;
+	}
+
+	70%{
+		left: -600%;
+	}
+
+	71%{
+		left: -700%;
+	}
+
+	80%{
+		left: -700%;
+	}
+
+	81%{
+		left: -800%;
+	}
+
+	90%{
+		left: -800%;
+  }
+  
+  91% {
+    left: -900%;
+  }
+
+  99% {
+    left: -900%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+/* .slide-up {
+  height: 100%;
+  overflow: hidden;
+<<<<<<< HEAD
+  animation: slide-left 2s;
+=======
+  animation: 2s slide-up;
+  margin-top: 0%;
+>>>>>>> feature/styling
+}
+
+@keyframes slide-up {
   from {
-    margin-left: 100%;
-    width: 300%; 
+    margin-top: 100%;
+    height: 300%; 
   }
 
   to {
-    margin-left: 0%;
-    width: 100%;
+    margin-top: 0%;
+    height: 100%;
   }
-}
+} */
 
 @media screen and (min-width: 1024px) {
   header {
@@ -99,5 +225,23 @@ a:hover {
 
   #date-button {
     padding: 1%;
+  }
+
+  .slide-left {
+    width: 100%;
+    overflow: hidden;
+    animation: slide-left 2s
+  }
+  
+  @keyframes slide-left {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
   }
 }
