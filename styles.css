@@ -26,7 +26,19 @@ body {
     ),
     /* bottom, image */
     url('images/old-newspaper.jpg');
-  }
+}
+
+input {
+  padding: 1%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color:  darkgrey;
+  text-align: center;
+}
+
+label {
+  margin-bottom: 15px
+}
 
 ul {
   list-style: none;
@@ -56,7 +68,7 @@ a:hover {
   color: #fff8dc;
   padding: 2%;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #date-button:hover {
@@ -67,6 +79,8 @@ a:hover {
 .hidden {
   display: none;
 }
+
+
 
 #invalid-date {
   text-align: center;
@@ -95,98 +109,98 @@ a:hover {
 }
 
 .slider{
-	overflow: hidden;
+  overflow: hidden;
   height: 100px;
   font-size: 1.5em;
   line-height: 1.5;
 }
 
 .slider figure div{
-	width: 10%;
+  width: 10%;
   float: left;
 }
 
 .slider figure{
-	position: relative;
-	width: 1000%;
-	margin: 0;
-	left: 0;
-	animation: 35s slidy infinite;
+  position: relative;
+  width: 1000%;
+  margin: 0;
+  left: 0;
+  animation: 35s slidy infinite;
 }
 
 @keyframes slidy {
-	0%{
-		left: 0%
-	}
-
-	10%{
-		left: 0%;
-	}
-
-	11%{
-		left: -100%;
-	}
-
-	20%{
-		left: -100%;
-	}
-
-	21%{
-		left: -200%;
-	}
-
-	30%{
-		left: -200%;
-	}
-
-	31%{
-		left: -300%;
-	}
-
-	40%{
-		left: -300%;
-	}
-
-	41%{
-		left: -400%;
-	}
-
-	50%{
-		left: -400%;
-	}
-
-	51%{
-		left: -500%;
-	}
-
-	60%{
-		left: -500%;
-	}
-
-	61%{
-		left: -600%;
-	}
-
-	70%{
-		left: -600%;
-	}
-
-	71%{
-		left: -700%;
-	}
-
-	80%{
-		left: -700%;
-	}
-
-	81%{
-		left: -800%;
-	}
-
-	90%{
-		left: -800%;
+  0%{
+    left: 0%
   }
-  
+
+  10%{
+    left: 0%;
+  }
+
+  11%{
+    left: -100%;
+  }
+
+  20%{
+    left: -100%;
+  }
+
+  21%{
+    left: -200%;
+  }
+
+  30%{
+    left: -200%;
+  }
+
+  31%{
+    left: -300%;
+  }
+
+  40%{
+    left: -300%;
+  }
+
+  41%{
+    left: -400%;
+  }
+
+  50%{
+    left: -400%;
+  }
+
+  51%{
+    left: -500%;
+  }
+
+  60%{
+    left: -500%;
+  }
+
+  61%{
+    left: -600%;
+  }
+
+  70%{
+    left: -600%;
+  }
+
+  71%{
+    left: -700%;
+  }
+
+  80%{
+    left: -700%;
+  }
+
+  81%{
+    left: -800%;
+  }
+
+  90%{
+    left: -800%;
+  }
+
   91% {
     left: -900%;
   }

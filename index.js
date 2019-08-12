@@ -5,14 +5,6 @@
 const apiKey = 'Wuo64AKtlhqtUJFBpSwNrkFvZcXygXkf';
 const searchUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
-// format query parameters
-function formatQueryParams(params) {
-  console.log(params);
-  const queryItems = Object.keys(params).map(key => `fq=${key}:${params[key]}`)
-  console.log(queryItems);
-  return queryItems.join('&');
-}
-
 // retrieve headlines from today's date -50 years from nyt api
 function getOldNews(autoDate) {
   const params = {
@@ -36,7 +28,7 @@ function getOldNews(autoDate) {
   });
 }
 
-// retrieve data from nyt api
+// retrieve data from nyt api for user search
 function getNews(searchDate) {
   const params = {
     pub_date: searchDate
@@ -69,7 +61,7 @@ function displayAutoResults(jsonResponse) {
   }
 }
 
-// display results
+// display search results
 function displayResults(jsonResponse) {
   const userSearchDate = $('#search-date').val();
   const dateArray = userSearchDate.split("-");
@@ -99,6 +91,13 @@ function displayResults(jsonResponse) {
 
 }
 
+// format query parameters
+function formatQueryParams(params) {
+  console.log(params);
+  const queryItems = Object.keys(params).map(key => `fq=${key}:${params[key]}`)
+  console.log(queryItems);
+  return queryItems.join('&');
+}
 
 // watch form for submission
 function watchForm() {
