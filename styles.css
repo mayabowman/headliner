@@ -25,8 +25,8 @@ body {
       rgba(0, 0, 0, .8)
     ),
     /* bottom, image */
-    url(http://amartyasen.co/wp-content/uploads/2019/08/old-newspaper-seamless-pattern-vector-background-of-vintage-template-front-page-instant-download-for-free.jpg) 
-}
+    url('images/old-newspaper.jpg');
+  }
 
 ul {
   list-style: none;
@@ -68,7 +68,10 @@ a:hover {
   display: none;
 }
 
-.news-section {
+#invalid-date {
+  text-align: center;
+}
+.news-display {
   border: 1px solid #fff8dc;
   margin-bottom: 15px;
   background-color: #272a2a;
@@ -93,7 +96,9 @@ a:hover {
 
 .slider{
 	overflow: hidden;
-	height: 150px;
+  height: 100px;
+  font-size: 1.5em;
+  line-height: 1.5;
 }
 
 .slider figure div{

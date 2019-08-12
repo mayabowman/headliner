@@ -12,25 +12,26 @@
   <header>
     <h1>Explore 150 Years of New York Times Headlines</h1>
   </header>
-  <div class='news-section' id='auto-title'>
+  <section class='news-display' id='auto-title'>
     <h2>50 Years Ago Today:</h2>
     <div class="slider">
         <figure id='feature-articles'></figure>
     </div>
-  </div>
-  <div class='news-section'>
+  </section>
+  <section class='news-display'>
     <h2>Search Headlines</h2>
     <form id='search-form'>
       <label for='search-date'>Enter Date:</label><br>
       <input type='date' id='search-date'>
       <button id='date-button'>Search</button>
     </form>
-    <div id='results-section' class='hidden news-section slide-up slide-left'>
+    <div id='results-section' class='hidden'>
       <p id='error-message'></p>
       <h2 id='results-title'></h2>
-      <ul id='results'></ul>
+      <p id='invalid-date' class='hidden'>No articles for this date, please search again!</p>
+      <ul id='results' class='slide-left'></ul>
     </div>
-  </div>
+  </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   <script src="index.js"></script>
 </body>

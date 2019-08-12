@@ -1,8 +1,9 @@
 'use strict';
 
+// access New York Times archive API
+// and let user for headlines by date
 const apiKey = 'Wuo64AKtlhqtUJFBpSwNrkFvZcXygXkf';
-
-const searchURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+const searchUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
 // format query parameters
 function formatQueryParams(params) {
@@ -18,7 +19,7 @@ function getOldNews(autoDate) {
     pub_date: autoDate
   };
   const queryString = formatQueryParams(params)
-  const url = searchURL + '?' + queryString + '&' + 'api-key=' + apiKey;
+  const url = searchUrl + '?' + queryString + '&' + 'api-key=' + apiKey;
 
   console.log(url);
 
@@ -29,7 +30,7 @@ function getOldNews(autoDate) {
     }
     throw new Error(response.statusText);
   })
-  .then(responseJson => displayAutoResults(responseJson))
+  .then(jsonResponse => displayAutoResults(jsonResponse))
   .catch(error => {
     $('#error-message').text(`Something went wrong: ${error.message}`);
   });
@@ -41,7 +42,7 @@ function getNews(searchDate) {
     pub_date: searchDate
   };
   const queryString = formatQueryParams(params)
-  const url = searchURL + '?' + queryString + '&' + 'api-key=' + apiKey;
+  const url = searchUrl + '?' + queryString + '&' + 'api-key=' + apiKey;
 
   console.log(url);
 
@@ -52,16 +53,16 @@ function getNews(searchDate) {
     }
     throw new Error(response.statusText);
   })
-  .then(responseJson => displayResults(responseJson))
+  .then(jsonResponse => displayResults(jsonResponse))
   .catch(error => {
     $('#error-message').text(`Something went wrong: ${error.message}`);
   });
 }
 
 // display auto results
-function displayAutoResults(responseJson) {
+function displayAutoResults(jsonResponse) {
   $('#error-message').empty();
-  const headlines = responseJson.response.docs;
+  const headlines = jsonResponse.response.docs;
   for (let item of headlines) {
     const listItem = `<div class='slide'><a target='_blank' href="${item.web_url}">${item.headline.main}</a></div>`;
     $(listItem).appendTo('#feature-articles');
@@ -69,31 +70,37 @@ function displayAutoResults(responseJson) {
 }
 
 // display results
-function displayResults(responseJson) {
-  console.log(responseJson);
-  $('#error-message').empty();
-  $('#results').empty();
-  for (let i = 0; i < responseJson.response.docs.length; i++) {
-    $('#results').append(`<li class='slide-left'><a target='_blank' href='${responseJson.response.docs[i].web_url}'>${responseJson.response.docs[i].headline.main}</a></li>`);
-  };
-  $('#results-section').removeClass('hidden');
+function displayResults(jsonResponse) {
   const userSearchDate = $('#search-date').val();
   const dateArray = userSearchDate.split("-");
   const indexOfFirst = dateArray[1].indexOf('0');
   const indexOfSecond = dateArray[2].indexOf('0');
+  console.log(jsonResponse);
+  $('#error-message').empty();
+  $('#results').empty();
+  $('#invalid-date').addClass('hidden');
+  for (let i = 0; i <jsonResponse.response.docs.length; i++) {
+    $('#results').append(`<li class='slide-left'><a target='_blank' href='${jsonResponse.response.docs[i].web_url}'>${jsonResponse.response.docs[i].headline.main}</a></li>`);
+  };
+  $('#results-section').removeClass('hidden');
+  
   if (indexOfFirst === 0) {
     dateArray[1] = dateArray[1].substr(1);
-  };
+  } 
   if (indexOfSecond === 0) {
     dateArray[2] = dateArray[2].substr(1);
+  } 
+  if (jsonResponse.response.docs.length === 0) {
+    $('#invalid-date').removeClass('hidden');
   }
   const formattedDate = `${dateArray[1]}-${dateArray[2]}-${dateArray[0]}`;
   $('#results-title').text(`Results for ${formattedDate}`);
   $('#search-date').val('');
-  
+
 }
 
-// event listener
+
+// watch form for submission
 function watchForm() {
   $('#search-form').submit(event => {
     event.preventDefault();
@@ -105,7 +112,7 @@ function watchForm() {
 // event listener for feature article
 function watchPage() {
     // event.preventDefault();
-    let autoDate = null;
+    let autoDate;
     let today = new Date();
     let date = today.getDate();
     let month = today.getMonth() +1;
