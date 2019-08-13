@@ -56,7 +56,7 @@ function displayAutoResults(jsonResponse) {
   $('#error-message').empty();
   const headlines = jsonResponse.response.docs;
   for (let item of headlines) {
-    const listItem = `<div class='slide'><a target='_blank' href="${item.web_url}">${item.headline.main}</a></div>`;
+    const listItem = `<div class='slide'><i class='fas fa-link fa-fw'></i><a target='_blank' href="${item.web_url}">${item.headline.main}</a></div>`;
     $(listItem).appendTo('#feature-articles');
   }
 }
@@ -72,7 +72,7 @@ function displayResults(jsonResponse) {
   $('#results').empty();
   $('#invalid-date').addClass('hidden');
   for (let i = 0; i <jsonResponse.response.docs.length; i++) {
-    $('#results').append(`<li class='slide-left'><a target='_blank' href='${jsonResponse.response.docs[i].web_url}'>${jsonResponse.response.docs[i].headline.main}</a></li>`);
+    $('#results').append(`<li class='slide-left'><i class='fas fa-link fa-fw'></i><a target='_blank' href='${jsonResponse.response.docs[i].web_url}'>${jsonResponse.response.docs[i].headline.main}</a></li>`);
   };
   $('#results-section').removeClass('hidden');
   
@@ -119,10 +119,11 @@ function watchPage() {
     if (date < 10) {
       date = '0' + date;
     } if (month < 10) {
-      autoDate = (today.getFullYear() - 50 + '-' + '0' + month + '-' + date);
+      autoDate = (today.getFullYear() - 50 + `-0${month}-${date}`);
     } else {
-      autoDate = (today.getFullYear() - 50 + '-' + month + '-' + date);
+      autoDate = (today.getFullYear() - 50 + `'-${month}-${date}`);
     }
+    console.log(autoDate);
     getOldNews(autoDate);
 };
 

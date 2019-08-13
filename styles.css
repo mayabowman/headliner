@@ -33,11 +33,12 @@ input {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   color:  darkgrey;
-  text-align: center;
+  text-align: left;
+  margin-top: 15px;
 }
 
 label {
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 
 ul {
@@ -59,6 +60,10 @@ a:hover {
   text-decoration-line: underline;
 }
 
+#auto-title {
+  height: auto;
+}
+
 #date-button {
   display: block;
   margin-left: auto;
@@ -67,7 +72,7 @@ a:hover {
   background-color: #272a2a;
   color: #fff8dc;
   padding: 2%;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -89,8 +94,7 @@ a:hover {
   border: 1px solid #fff8dc;
   margin-bottom: 15px;
   background-color: #272a2a;
-  /* margin-left: 4%;
-  margin-right: 4%; */
+  padding: 2%;
 }
 
 #results-section {
