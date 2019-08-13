@@ -64,6 +64,9 @@ a:hover {
   height: auto;
 }
 
+[class^='fas'] {
+  margin-right: 10px;
+}
 #date-button {
   display: block;
   margin-left: auto;
