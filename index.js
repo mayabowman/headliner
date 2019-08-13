@@ -13,8 +13,6 @@ function getOldNews(autoDate) {
   const queryString = formatQueryParams(params)
   const url = searchUrl + '?' + queryString + '&' + 'api-key=' + apiKey;
 
-  console.log(url);
-
   fetch(url)
   .then(response => {
     if(response.ok) {
@@ -35,8 +33,6 @@ function getNews(searchDate) {
   };
   const queryString = formatQueryParams(params)
   const url = searchUrl + '?' + queryString + '&' + 'api-key=' + apiKey;
-
-  console.log(url);
 
   fetch(url)
   .then(response => {
@@ -67,7 +63,6 @@ function displayResults(jsonResponse) {
   const dateArray = userSearchDate.split("-");
   const indexOfFirst = dateArray[1].indexOf('0');
   const indexOfSecond = dateArray[2].indexOf('0');
-  console.log(jsonResponse);
   $('#error-message').empty();
   $('#results').empty();
   $('#invalid-date').addClass('hidden');
@@ -93,9 +88,7 @@ function displayResults(jsonResponse) {
 
 // format query parameters
 function formatQueryParams(params) {
-  console.log(params);
   const queryItems = Object.keys(params).map(key => `fq=${key}:${params[key]}`)
-  console.log(queryItems);
   return queryItems.join('&');
 }
 
@@ -110,7 +103,6 @@ function watchForm() {
 
 // event listener for feature article
 function watchPage() {
-    // event.preventDefault();
     let autoDate;
     let today = new Date();
     let date = today.getDate();
@@ -123,7 +115,6 @@ function watchPage() {
     } else {
       autoDate = (today.getFullYear() - 50 + `'-${month}-${date}`);
     }
-    console.log(autoDate);
     getOldNews(autoDate);
 };
 
