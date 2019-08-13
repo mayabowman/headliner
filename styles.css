@@ -115,6 +115,12 @@ a:hover {
   margin-bottom: 15px;
 }
 
+ul#results.slide-left {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1em;
+}
+
 .slider{
   overflow: hidden;
   height: 100px;
