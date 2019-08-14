@@ -19,12 +19,10 @@ body {
   padding: 4%;
   background-color: #272a2a;
   background: 
-    /* top, transparent grey */ 
     linear-gradient(
       rgba(0, 0, 0, .8), 
       rgba(0, 0, 0, .8)
     ),
-    /* bottom, image */
     url('images/old-newspaper.jpg');
 }
 
@@ -226,25 +224,6 @@ ul#results.slide-left {
     left: 0%;
   }
 }
-
-/* .slide-up {
-  height: 100%;
-  overflow: hidden;
-  animation: 2s slide-up;
-  margin-top: 0%;
-}
-
-@keyframes slide-up {
-  from {
-    margin-top: 100%;
-    height: 300%; 
-  }
-
-  to {
-    margin-top: 0%;
-    height: 100%;
-  }
-} */
 
 @media screen and (min-width: 1024px) {
   header {

@@ -1,7 +1,6 @@
 'use strict';
 
 // access New York Times archive API
-// and let user for headlines by date
 const apiKey = 'Wuo64AKtlhqtUJFBpSwNrkFvZcXygXkf';
 const searchUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
@@ -47,7 +46,7 @@ function getNews(searchDate) {
   });
 }
 
-// display auto results
+// display results for headlines from 50 years ago today
 function displayAutoResults(jsonResponse) {
   $('#error-message').empty();
   const headlines = jsonResponse.response.docs;
@@ -57,7 +56,7 @@ function displayAutoResults(jsonResponse) {
   }
 }
 
-// display search results
+// display user search results
 function displayResults(jsonResponse) {
   const userSearchDate = $('#search-date').val();
   const dateArray = userSearchDate.split("-");
@@ -101,7 +100,7 @@ function watchForm() {
   });
 }
 
-// event listener for feature article
+// display featured headlines when page loads
 function watchPage() {
     let autoDate;
     let today = new Date();
