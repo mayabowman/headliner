@@ -10,10 +10,10 @@ This app uses HTML, CSS, JavaScript and jQuery.
 
 Landing page:
 
-![image](/images/news-app-landing-page.png)
+![](images/news-app-landing-page.png)
 
 Results page: 
 
-![image](/images/news-app-results-page.png)
+![](images/news-app-results-page.png)
 
 
