@@ -10,11 +10,10 @@ This app uses HTML, CSS, JavaScript and jQuery.
 
 Landing page:
 
-Screen Shot 2019-08-13 at 5.41.56 PM.png
+![image](/desktop/news-app-landing-page.png)
 
 Results page: 
 
-Screen Shot 2019-08-13 at 5.42.36 PM.png
-
+![image](/desktop/news-app-results-page.png)
 
 
