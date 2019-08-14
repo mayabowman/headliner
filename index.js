@@ -102,19 +102,19 @@ function watchForm() {
 
 // display featured headlines when page loads
 function watchPage() {
-    let autoDate;
-    let today = new Date();
-    let date = today.getDate();
-    let month = today.getMonth() +1;
+  let autoDate;
+  let today = new Date();
+  let date = today.getDate();
+  let month = today.getMonth() +1;
 
-    if (date < 10) {
-      date = '0' + date;
-    } if (month < 10) {
-      autoDate = (today.getFullYear() - 50 + `-0${month}-${date}`);
-    } else {
-      autoDate = (today.getFullYear() - 50 + `'-${month}-${date}`);
-    }
-    getOldNews(autoDate);
+  if (date < 10) {
+    date = '0' + date;
+  } if (month < 10) {
+    autoDate = (today.getFullYear() - 50 + `-0${month}-${date}`);
+  } else {
+    autoDate = (today.getFullYear() - 50 + `'-${month}-${date}`);
+  }
+  getOldNews(autoDate);
 };
 
 function startApp() {

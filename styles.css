@@ -65,6 +65,7 @@ a:hover {
 [class^='fas'] {
   margin-right: 10px;
 }
+
 #date-button {
   display: block;
   margin-left: auto;
@@ -86,11 +87,10 @@ a:hover {
   display: none;
 }
 
-
-
 #invalid-date {
   text-align: center;
 }
+
 .news-display {
   border: 1px solid #fff8dc;
   margin-bottom: 15px;
@@ -119,19 +119,19 @@ ul#results.slide-left {
   font-size: 1em;
 }
 
-.slider{
+.slider {
   overflow: hidden;
   height: 100px;
   font-size: 1.5em;
   line-height: 1.5;
 }
 
-.slider figure div{
+.slider figure div {
   width: 10%;
   float: left;
 }
 
-.slider figure{
+.slider figure {
   position: relative;
   width: 1000%;
   margin: 0;
@@ -244,8 +244,7 @@ ul#results.slide-left {
     from {
       margin-left: 100%;
       width: 300%; 
-    }
-  
+    }  
     to {
       margin-left: 0%;
       width: 100%;
