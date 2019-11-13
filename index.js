@@ -11,7 +11,7 @@ function getOldNews(autoDate) {
   };
   const queryString = formatQueryParams(params)
   const url = searchUrl + '?' + queryString + '&' + 'api-key=' + apiKey;
-
+  
   fetch(url)
   .then(response => {
     if(response.ok) {
@@ -112,7 +112,7 @@ function watchPage() {
   } if (month < 10) {
     autoDate = (today.getFullYear() - 50 + `-0${month}-${date}`);
   } else {
-    autoDate = (today.getFullYear() - 50 + `'-${month}-${date}`);
+    autoDate = (today.getFullYear() - 50 + `-${month}-${date}`);
   }
   getOldNews(autoDate);
 };
